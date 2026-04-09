@@ -16,14 +16,43 @@ public class Bouteille {
         this.enVerre = enVerre;
         this.remplissage = 100.0;
     }
-    public static String formateur(double valeur) {
+    private static String formateur(double valeur) {
             DecimalFormat poison  = new DecimalFormat("##.00");
             return poison.format(valeur);
     }
 
+
+
+    public String getNom() {
+        return nom;
+    }
+
+    public double getPrix() {
+        return prix;
+    }
+
+    public double getContenance() {
+        return contenance;
+    }
+
+    public double getRemplissage() {
+        return remplissage;
+    }
+
+    public boolean isEnVerre() {
+        return enVerre;
+    }
+
+    public void setRemplissage(double remplissage) {
+        this.remplissage = remplissage;
+    }
+
+
+
     @Override
     public String toString() {
-        return "Bouteille \'" + nom + "\' de " + contenance + "L "+((enVerre) ? "en verre": "pas en verre")+"à"+ formateur(prix) + " Frs - "+((remplissage == 100.0) ? "pleine": (remplissage == 0.0) ? "vide" : "entamée");
+        return "Bouteille \'" + nom + "\' de " + contenance + "L "+((enVerre) ? "en verre": "pas en verre")+" à "+ formateur(prix) + " Frs - "+((remplissage == 100.0) ? "pleine": (remplissage == 0.0) ? "vide" : "entamée");
     }
+    
 
 }
